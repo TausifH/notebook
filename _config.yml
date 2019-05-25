@@ -1,7 +1,7 @@
 title: Magento Documentation Theme
 description: Templates, styles and scripts for all Magento Documentation portals.
 logo: DocsTheme
-baseurl: "notebook"
+baseurl: "/notebook"
 permalink: pretty
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
