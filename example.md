@@ -31,13 +31,6 @@ You can start off by editing the local version of this file using markdown langu
 </div>
 
 
-{% collapsible This is the collapsible title %}
-  Markdown content goes in this area.
-{% endcollapsible %}
-
-{% collapsibleh2 This is the collapsible H2 title %}
-  Markdown content goes in this area.
-{% endcollapsibleh2 %}
 
 {% highlight html %}
 <div class="container">
