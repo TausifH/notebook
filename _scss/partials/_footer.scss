@@ -1,0 +1,68 @@
+.page-footer {
+  background: $footer-background-color;
+  color: $footer-color;
+  padding: 20px 0;
+  font-size: 13px;
+  z-index: 3;
+
+  a, a:visited {
+    color: $footer-link-color;
+
+    &:hover {
+      color: lighten( $footer-link-color, 10% );
+    }
+  }
+
+
+  .copyright-links {
+    text-align: center;
+    padding: 0 0 10px 0;
+  }
+
+
+  .nav {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links > li {
+    display: inline-block;
+    margin: 0 20px 0 0 ;
+  }
+
+  .copyright-date {
+    text-align: center;
+  }
+
+  // For two colum layout, offset the footer to support the fixed sidebar
+  .layout-default &, .layout-videos &, .layout-video &, .layout-specification &, .layout-tutorial & {
+    margin-left: $sidebar-width;
+  }
+
+  @media ( $medium-screen ) {
+
+    .layout-default &, .layout-videos &, .layout-video &, .layout-specification & {
+      margin-left: 0;
+    }
+
+  }
+
+  @media ( $small-screen ) {
+
+    margin: 0;
+    padding: 10px 0;
+
+    .copyright-date {
+      text-align: left;
+    }
+    .copyright-links {
+      text-align: left;
+    }
+    li {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+
+
+}

@@ -1,0 +1,192 @@
+
+// Top bar
+.site-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  background: $light-gray-color;
+  transition: box-shadow $transition-duration;
+  box-shadow: 0 1px 2px transparent;
+  transform: translateZ(0); // to force nav rendering to GPU
+  z-index: $zindex-appbar;
+}
+
+
+.site-header {
+
+  // To push the content of the page to allow fixed top bar
+  padding-top: $header-height;
+
+  .nav-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 $spacing*4;
+  }
+
+  .nav-main-wrap {
+    flex: 1 0 0;
+    padding: 0 $spacing*2;
+  }
+
+  .menu-btn {
+    width: $header-height;
+    height: $header-height;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    display: none;
+    z-index: 50;
+    border: none;
+    border-left: 1px solid $border-color;
+  }
+
+  .menu-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../i/icons/menu.svg) center center no-repeat;
+    background-size: 50%;
+    border: none;
+    border-radius: 0;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+      background-color: #fff;
+      transition: background-color 0.2s linear
+    }
+  }
+
+  .search-btn {
+    width: $header-height;
+    height: $header-height;
+    position: relative;
+    z-index: 3;
+
+    .search-icon {
+      background: transparent;
+      border: none;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('../i/icons/search.svg');
+    }
+  }
+
+  @media ( $medium-screen ) {
+
+    .site-nav {
+      outline: 1px solid $border-color;
+    }
+
+    .menu-btn {
+      display: block;
+    }
+
+    .search-btn {
+      margin: 0;
+      position: absolute;
+      top: 0;
+      right: $header-height;
+    }
+
+    .nav-main-wrap {
+      position: fixed;
+      display: none;
+      overflow: auto;
+      width: 100%;
+      height: calc(100vh - 55px);
+      padding-bottom: $header-height;
+
+      max-width: 400px;
+      z-index: 3000;
+      -webkit-overflow-scrolling: touch;
+      background: $dropdown-bg;
+      transition: all $transition-duration;
+
+      top: $header-height;
+      right: 0;
+
+      z-index: $zindex-appbar - 1;
+
+    }
+
+  } // medium-screen
+
+}
+
+
+.logo {
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  margin-right: $spacing*4;
+  min-height: $header-height;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  // Name of the website
+  .site-logo {
+
+    position: relative;
+    align-self: flex-start;
+    top: 6px;
+
+    color: $body-font-color;
+    border-left: 2px solid #4e4e4e;
+
+    font-size: 22px;
+    height: 43px;
+    line-height: 38px;
+    letter-spacing: .01em;
+
+    font-weight: $font-weight-normal;
+
+    padding: 0 0 0 $spacing*2;
+    margin: 0 0 0 $spacing*2;
+
+    text-decoration: none;
+
+  }
+
+  // Remove 'Magento' from logo on tablet
+  @media ( $medium-to-large-screen ) {
+    .magento-logo {
+      display: none;
+    }
+    .site-logo {
+      height: 36px;
+      line-height: 36px;
+    }
+  }
+
+  @media ( $medium-screen ) {
+    .magento-logo {
+      display: block;
+    }
+    .site-logo {
+      height: 43px;
+      line-height: 38px;
+    }
+  }
+
+}
+
+.offcanvas-active .nav-main-wrap  {
+  display: block;
+}
+
+
+// Disable scrollbar when menu is open
+body.offcanvas-active {
+  overflow: hidden;
+}
