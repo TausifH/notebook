@@ -1,25 +1,7 @@
 $toggle-width: 30px;
 $active-item-background: lighten( $accent-color, 53% );
 
-.sidebar {
-  position: fixed;
-  width: $sidebar-width;
-  border-right: 1px solid $border-color;
-  height: 100%;
-  z-index: 2;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  background: #fff;
 
-  &::-webkit-scrollbar-track {
-    background: transparent;
-    border: none;
-  }
-
-  .sidebar-wrapper {
-    padding: 0 0 $spacing*4;
-    padding-bottom: 120px; // magic number is needed to allow visibility of the long sidebars
-  }
 
   .guide-title {
     position: relative;
